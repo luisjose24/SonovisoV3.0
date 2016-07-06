@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Area.cs" />
+    <Compile Include="Properties\Area.cs" />
     <Compile Include="Formato.cs" />
     <Compile Include="Genero.cs" />
     <Compile Include="Medio.cs" />
