@@ -57,7 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaService.cs" />
+    <Compile Include="GeneroService.cs" />
     <Compile Include="IAreaService.cs" />
+    <Compile Include="IGeneroService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

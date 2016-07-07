@@ -231,6 +231,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Otros\FormAreas.aspx" />
+    <Content Include="Otros\FormGenero.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -415,6 +417,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Otros\FormAreas.aspx.cs">
+      <DependentUpon>FormAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Otros\FormAreas.aspx.designer.cs">
+      <DependentUpon>FormAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Otros\FormGenero.aspx.cs">
+      <DependentUpon>FormGenero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Otros\FormGenero.aspx.designer.cs">
+      <DependentUpon>FormGenero.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

@@ -8,7 +8,7 @@ using Sono_Viso.Repository;
 
 namespace Sono_Viso.Service
 {
-    public class AreaService : IAreaRepository
+    public class AreaService : IAreaService
     {
         public IAreaRepository AreaRepository { get; set; }
 

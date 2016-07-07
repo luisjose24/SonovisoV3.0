@@ -32,7 +32,7 @@ namespace Sono_Viso.Repository
 
         public Area AddArea(Area area)
         {
-            return Context.Areas.Add(area);
+            Context.Areas.Add(area);
             Context.SaveChanges();
             return area;
         }

@@ -66,7 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaRepository.cs" />
+    <Compile Include="GeneroRepository.cs" />
     <Compile Include="IAreaRepository.cs" />
+    <Compile Include="IGeneroRepository.cs" />
     <Compile Include="Mapping\AreaMap.cs" />
     <Compile Include="Mapping\FormatoMap.cs" />
     <Compile Include="Mapping\GeneroMap.cs" />
