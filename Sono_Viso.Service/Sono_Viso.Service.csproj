@@ -57,9 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaService.cs" />
+    <Compile Include="FormatoService.cs" />
     <Compile Include="GeneroService.cs" />
     <Compile Include="IAreaService.cs" />
+    <Compile Include="IFormatoService.cs" />
     <Compile Include="IGeneroService.cs" />
+    <Compile Include="IMedioService.cs" />
+    <Compile Include="IProduccionService.cs" />
+    <Compile Include="MedioService.cs" />
+    <Compile Include="ProduccionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

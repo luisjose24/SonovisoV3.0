@@ -232,7 +232,10 @@
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Otros\FormAreas.aspx" />
+    <Content Include="Otros\FormFormato.aspx" />
     <Content Include="Otros\FormGenero.aspx" />
+    <Content Include="Otros\FrmMedios.aspx" />
+    <Content Include="Otros\FrmProduccion.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -424,12 +427,33 @@
     <Compile Include="Otros\FormAreas.aspx.designer.cs">
       <DependentUpon>FormAreas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Otros\FormFormato.aspx.cs">
+      <DependentUpon>FormFormato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Otros\FormFormato.aspx.designer.cs">
+      <DependentUpon>FormFormato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Otros\FormGenero.aspx.cs">
       <DependentUpon>FormGenero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Otros\FormGenero.aspx.designer.cs">
       <DependentUpon>FormGenero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Otros\FrmMedios.aspx.cs">
+      <DependentUpon>FrmMedios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Otros\FrmMedios.aspx.designer.cs">
+      <DependentUpon>FrmMedios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Otros\FrmProduccion.aspx.cs">
+      <DependentUpon>FrmProduccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Otros\FrmProduccion.aspx.designer.cs">
+      <DependentUpon>FrmProduccion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

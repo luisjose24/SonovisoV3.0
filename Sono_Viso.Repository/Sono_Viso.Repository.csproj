@@ -66,20 +66,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaRepository.cs" />
+    <Compile Include="FormatoRepository.cs" />
     <Compile Include="GeneroRepository.cs" />
     <Compile Include="IAreaRepository.cs" />
+    <Compile Include="IFormatoRepository.cs" />
     <Compile Include="IGeneroRepository.cs" />
+    <Compile Include="IMedioRepository.cs" />
+    <Compile Include="IProduccionRepository.cs" />
     <Compile Include="Mapping\AreaMap.cs" />
     <Compile Include="Mapping\FormatoMap.cs" />
     <Compile Include="Mapping\GeneroMap.cs" />
     <Compile Include="Mapping\MedioMap.cs" />
     <Compile Include="Mapping\ProduccionMap.cs" />
     <Compile Include="MasterRepository.cs" />
+    <Compile Include="MedioRepository.cs" />
     <Compile Include="Migrations\201607061640158_DbInicial.cs" />
     <Compile Include="Migrations\201607061640158_DbInicial.Designer.cs">
       <DependentUpon>201607061640158_DbInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ProduccionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sono_VisoContext.cs" />
   </ItemGroup>

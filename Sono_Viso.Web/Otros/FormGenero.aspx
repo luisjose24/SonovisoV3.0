@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FormGenero.aspx.cs" Inherits="Sono_Viso.Web.Otros.FormGenero" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
-    <asp:Label Text="Areas" runat="server" />
+    <asp:Label Text="Generos" runat="server" />
     
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
