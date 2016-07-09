@@ -73,6 +73,7 @@
     <Compile Include="ICategoriaMaterialRepository.cs" />
     <Compile Include="IFormatoRepository.cs" />
     <Compile Include="IGeneroRepository.cs" />
+    <Compile Include="IMaterialRepository.cs" />
     <Compile Include="IMedioRepository.cs" />
     <Compile Include="IProduccionRepository.cs" />
     <Compile Include="Mapping\AreaMap.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Mapping\MedioMap.cs" />
     <Compile Include="Mapping\ProduccionMap.cs" />
     <Compile Include="MasterRepository.cs" />
+    <Compile Include="MaterialRepository.cs" />
     <Compile Include="MedioRepository.cs" />
     <Compile Include="Migrations\201607061640158_DbInicial.cs" />
     <Compile Include="Migrations\201607061640158_DbInicial.Designer.cs">

@@ -64,8 +64,10 @@
     <Compile Include="ICategoriaMaterialService.cs" />
     <Compile Include="IFormatoService.cs" />
     <Compile Include="IGeneroService.cs" />
+    <Compile Include="IMaterialService.cs" />
     <Compile Include="IMedioService.cs" />
     <Compile Include="IProduccionService.cs" />
+    <Compile Include="MaterialService.cs" />
     <Compile Include="MedioService.cs" />
     <Compile Include="ProduccionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

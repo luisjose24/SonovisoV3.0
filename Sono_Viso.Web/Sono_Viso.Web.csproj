@@ -235,6 +235,7 @@
     <Content Include="Otros\FormCategoriaMaterial.aspx" />
     <Content Include="Otros\FormFormato.aspx" />
     <Content Include="Otros\FormGenero.aspx" />
+    <Content Include="Otros\FrmMaterials.aspx" />
     <Content Include="Otros\FrmMedios.aspx" />
     <Content Include="Otros\FrmProduccion.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -448,6 +449,13 @@
     </Compile>
     <Compile Include="Otros\FormGenero.aspx.designer.cs">
       <DependentUpon>FormGenero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Otros\FrmMaterials.aspx.cs">
+      <DependentUpon>FrmMaterials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Otros\FrmMaterials.aspx.designer.cs">
+      <DependentUpon>FrmMaterials.aspx</DependentUpon>
     </Compile>
     <Compile Include="Otros\FrmMedios.aspx.cs">
       <DependentUpon>FrmMedios.aspx</DependentUpon>

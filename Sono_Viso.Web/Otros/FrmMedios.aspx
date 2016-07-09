@@ -355,10 +355,10 @@
                                 <td><%# Item.Titulo %></td>
                                 <td><%# Item.Area.Nombre %></td>
                                 <td><%# Item.Formato.Nombre %></td>
+                                <%--<td><%# Item.IsActivo. %></td>--%>
                                 <td><%# Item.IsActivo.Equals(1)?"No Disponible":"Disponible" %></td>
-                                <%--<td><%# Item.Tipo=="J"?"Juridico":"Natural" %></td>--%>
                                 <td><a href="/Otros/FrmMedios.aspx?acc=editar&id=<%# Item.Id %>">Editar</a><a>  |  </a>
-                                    <a href="FrmMedios.aspx?acc=eliminar&id=<%# Item.Id %>">Eliminar</a>
+                                    <a href="FrmMedios.aspx?acc=eliminar&id=<%# Item.Id %>"  onclick="return confirm('Desea eliminar: <%# Item.Titulo %>');">Eliminar</a>
                                 </td>
 
                             </tr>
