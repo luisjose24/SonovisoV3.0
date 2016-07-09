@@ -31,13 +31,22 @@ namespace Sono_Viso.Web.Otros {
         protected global::System.Web.UI.WebControls.FormView fvMedios;
         
         /// <summary>
-        /// btnDos control.
+        /// txtCriterio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDos;
+        protected global::System.Web.UI.WebControls.TextBox txtCriterio;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// panel2 control.
@@ -47,5 +56,14 @@ namespace Sono_Viso.Web.Otros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panel2;
+        
+        /// <summary>
+        /// lvMedios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lvMedios;
     }
 }

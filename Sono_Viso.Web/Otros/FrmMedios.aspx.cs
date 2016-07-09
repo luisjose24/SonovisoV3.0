@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Sono_Viso.BusinessEntities;
 using Sono_Viso.Service;
+using System.Web.ModelBinding;
 
 namespace Sono_Viso.Web.Otros
 {
@@ -29,14 +30,48 @@ namespace Sono_Viso.Web.Otros
 
             }
         }
-
+        protected bool enable = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             panel1.Enabled = false;
             panel2.Enabled = true;
 
+            var acc = Request.QueryString["acc"];
 
+            var idMedio = Request.QueryString["id"];
+
+            if (acc != null && acc.Equals("editar"))
+            {
+                panel1.Enabled = true;
+                panel2.Enabled = false;
+                enable = true;
+                fvMedios.DefaultMode = FormViewMode.Edit;
+            }
+            //else if (acc != null && acc.Equals("detalles"))
+            //{
+            //    panel1.Enabled = false;
+            //    panel2.Enabled = true;
+            //    enable = false;
+            //    fvMedios.DefaultMode = FormViewMode.Edit;
+            //}
+            else if (acc != null && acc.Equals("nuevo"))
+            {
+                panel1.Enabled = true;
+                panel2.Enabled = false;
+                enable = true;
+                fvMedios.DefaultMode = FormViewMode.Insert;
+                fvMedios.EnableViewState = true;
+            }
+            else if (acc != null && idMedio != null && acc.Equals("eliminar"))
+            {
+                var id = idMedio;
+                MedioService.DeleteMedio(id);
+                Response.Redirect("FrmMedios.aspx");
+            }
+            else
+            {
+            }
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
@@ -78,7 +113,7 @@ namespace Sono_Viso.Web.Otros
             if (ModelState.IsValid)
             {
                 MedioService.AddMedio(medio);
-                Response.Redirect("FormMedio.aspx");
+                Response.Redirect("FrmMedios.aspx");
             }
         }
 
@@ -87,8 +122,32 @@ namespace Sono_Viso.Web.Otros
             if (ModelState.IsValid)
             {
                 MedioService.EditMedio(medio);
-                Response.Redirect("FormMedio.aspx");
+                Response.Redirect("FrmMedios.aspx");
             }
+        }
+
+        public IEnumerable<Medio> GetMedios([Control("txtCriterio")] string criterio)
+        {
+            MedioService = new MedioService();
+            return MedioService.GetMedios(criterio);
+        }
+        public Medio GetMedio([QueryString("id")] string idMedio)
+        {
+            Medio medio = null;
+            if (idMedio != null)
+            {
+                medio = MedioService.GetMedio(idMedio);
+            }
+            else
+            {
+                Response.Redirect("FrmMedios.aspx");
+            }
+            return medio;
+
+
+            //string ident = Request.QueryString["id"];
+            //MedioService = new MedioService();
+            //return MedioService.GetMedio(id);
         }
 
     }

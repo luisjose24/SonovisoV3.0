@@ -9,9 +9,11 @@
         <asp:Panel ID="panel1" runat="server">
             <asp:FormView ID="fvMedios" DefaultMode="Insert" runat="server"
                 ItemType="Sono_Viso.BusinessEntities.Medio"
+                SelectMethod="GetMedio"
                 InsertMethod="AddMedio"
                 UpdateMethod="EditMedio">
                 <ItemTemplate></ItemTemplate>
+
                 <InsertItemTemplate>
                     
                     <div class="form-group">
@@ -71,6 +73,7 @@
                                 DataValueField="Id"
                                 SelectedValue="<%# BindItem.AreaId %>"
                                 >
+                                <%--<asp:ListItem Value="0"> Seleccionar... </asp:ListItem>--%>
                                 </asp:DropDownList> 
                         </div>
                     </div>
@@ -88,6 +91,7 @@
                                 DataValueField="Id"
                                 SelectedValue="<%# BindItem.GeneroId %>"
                                 >
+                                
                                 </asp:DropDownList> 
                         </div>
                     </div>
@@ -138,13 +142,18 @@
                     
  
                     <div class="form-group">
-                            <asp:Button Text="Actualizar"
+                        <asp:LinkButton Text="" 
+                            runat="server" />
+                            <asp:Button Text="Registrar"
                                 ID="btnGuardar"
-                                CommandName="update"
-                                CssClass="btn btn-info btn-primary col-sm-4 col-sm-offset-5"
-                                runat="server" />
-                            <asp:Button Text="Limpiar" ID="btnLimpiar" PostBackUrl="/Encargado/FrmAdmMaterial.aspx" CssClass="btn btn-link btn-primary col-sm-offset-0" runat="server" />
-
+                                CommandName="insert"
+                                CssClass="btn btn-info btn-primary col-sm-3 col-sm-offset-5"
+                                runat="server"
+                                Visible="<%# enable %>" />
+                            <asp:LinkButton ID="linkCancelar" runat="server" PostBackUrl="/Otros/FrmMedios.aspx"
+                                        CssClass="btn btn-info col-sm-4" Visible="<%# enable %>">
+                                         <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>Cancelar
+                                    </asp:LinkButton> 
                         </div>
 
                 </InsertItemTemplate>
@@ -190,6 +199,7 @@
                                 DataValueField="Id"
                                 SelectedValue="<%# BindItem.ProduccionId %>"
                                 >
+                                <%--<asp:ListItem Value="0"> Seleccionar... </asp:ListItem>--%>
                                 </asp:DropDownList> 
                         </div>
                     </div>
@@ -207,6 +217,7 @@
                                 DataValueField="Id"
                                 SelectedValue="<%# BindItem.AreaId %>"
                                 >
+                                <asp:ListItem Value="0"> Seleccionar... </asp:ListItem>
                                 </asp:DropDownList> 
                         </div>
                     </div>
@@ -224,6 +235,7 @@
                                 DataValueField="Id"
                                 SelectedValue="<%# BindItem.GeneroId %>"
                                 >
+                                <asp:ListItem Value="0"> Seleccionar... </asp:ListItem>
                                 </asp:DropDownList> 
                         </div>
                     </div>
@@ -241,6 +253,7 @@
                                 DataValueField="Id"
                                 SelectedValue="<%# BindItem.FormatoId %>"
                                 >
+                                <asp:ListItem Value="0"> Seleccionar... </asp:ListItem>
                                 </asp:DropDownList> 
                         </div>
                     </div>
@@ -274,13 +287,18 @@
                     
  
                     <div class="form-group">
+                        <asp:LinkButton Text="" 
+                            runat="server" />
                             <asp:Button Text="Actualizar"
                                 ID="btnGuardar"
                                 CommandName="update"
-                                CssClass="btn btn-info btn-primary col-sm-4 col-sm-offset-5"
-                                runat="server" />
-                            <asp:Button Text="Limpiar" ID="btnLimpiar" PostBackUrl="/Encargado/FrmAdmMaterial.aspx" CssClass="btn btn-link btn-primary col-sm-offset-0" runat="server" />
-
+                                CssClass="btn btn-info btn-primary col-sm-3 col-sm-offset-5"
+                                runat="server"
+                                Visible="<%# enable %>" />
+                            <asp:LinkButton ID="linkCancelar" runat="server" PostBackUrl="/Otros/FrmMedios.aspx"
+                                        CssClass="btn btn-info col-sm-4" Visible="<%# enable %>">
+                                         <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>Cancelar
+                                    </asp:LinkButton> 
                         </div>
                 </EditItemTemplate>
             </asp:FormView>
@@ -294,16 +312,67 @@
     </div>
     <div class="form-group col-sm-7">
         <h1>PARTE 2</h1>
-        <asp:Button ID="btnDos" Text="Activar Panel 1" runat="server" OnClick="btnDos_Click" />
-        <asp:Button Text="Activar Panel 2" runat="server" OnClick="Unnamed1_Click" />
+        
+        <label class="control-label">Criterio:</label>
+                    <div class="form-group">
+                        <asp:TextBox ID="txtCriterio" CssClass="form-control input-sm col-sm-5" runat="server"/>
+                        <asp:Button Text="Buscar" ID="Button1" CssClass="btn btn-success col-sm-offset-0" runat="server" />
+                        <a href = "/Otros/FrmMedios.aspx?acc=nuevo" class="btn btn-success col-sm-offset-1">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Registrar
+                        </a>
+                    </div>
+                    
+                    <p><br/></p>
         
         <asp:Panel ID="panel2" runat="server">
-            <asp:TextBox runat="server" />
-            <asp:TextBox runat="server" />
+            
+            <asp:ListView ID="lvMedios" runat="server" 
+                        ItemType="Sono_Viso.BusinessEntities.Medio"
+                        SelectMethod="GetMedios">
+                        <LayoutTemplate>
+                            <table class="table table-hover table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Codigo</th>
+                                    <th>Titulo</th>
+                                    <th>Area</th> 
+                                    <th>Formato</th>
+                                    <th>Estado</th> 
+                                    <th>Acciones</th> 
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr id="itemPlaceholder" runat="server"/>
+                                </tbody>
+
+                            </table>
+                        </LayoutTemplate>
+                        
+                        <ItemTemplate>
+                            <tr>
+                                <td><%# Item.Id %></td>
+                                <td><%# Item.Titulo %></td>
+                                <td><%# Item.Area.Nombre %></td>
+                                <td><%# Item.Formato.Nombre %></td>
+                                <td><%# Item.IsActivo.Equals(1)?"No Disponible":"Disponible" %></td>
+                                <%--<td><%# Item.Tipo=="J"?"Juridico":"Natural" %></td>--%>
+                                <td><a href="/Otros/FrmMedios.aspx?acc=editar&id=<%# Item.Id %>">Editar</a><a>  |  </a>
+                                    <a href="FrmMedios.aspx?acc=eliminar&id=<%# Item.Id %>">Eliminar</a>
+                                </td>
+
+                            </tr>
+                        </ItemTemplate>
+                        <EmptyDataTemplate>
+                            <h4>No Existen Datos</h4>
+                        </EmptyDataTemplate>
+
+                    </asp:ListView>
 
         </asp:Panel>
 
     </div>
  
+    <div><br/></div>
 
 </asp:Content>

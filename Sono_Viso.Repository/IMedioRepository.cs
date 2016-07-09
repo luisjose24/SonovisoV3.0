@@ -9,10 +9,11 @@ namespace Sono_Viso.Repository
 {
     public interface IMedioRepository
     {
+        IEnumerable<Medio> GetMedios(string criterio, Int32? areaId, Int32? formatoId);
         IEnumerable<Medio> GetMedios(string criterio);
-        Medio GetMedio(Int32 id);
+        Medio GetMedio(string id);
         Medio AddMedio(Medio medio);
-        Medio EditMedio(Medio medio);
-        void DeleteMedio(Int32 id);
+        void EditMedio(Medio medio);
+        void DeleteMedio(string id);
     }
 }

@@ -9,10 +9,11 @@ namespace Sono_Viso.Service
 {
     public interface IMedioService
     {
+        IEnumerable<Medio> GetMedios(string criterio, int? areaId, int? formatoId);
         IEnumerable<Medio> GetMedios(string criterio);
-        Medio GetMedio(Int32 id);
+        Medio GetMedio(string id);
         Medio AddMedio(Medio medio);
-        Medio EditMedio(Medio medio);
-        void DeleteMedio(Int32 id);
+        void EditMedio(Medio medio);
+        void DeleteMedio(string id);
     }
 }

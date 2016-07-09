@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,9 @@ namespace Sono_Viso.Repository
     public class MedioRepository : MasterRepository, IMedioRepository
     {
 
-        public IEnumerable<Medio> GetMedios(string criterio)
+        public IEnumerable<Medio> GetMedios(string criterio, int? areaId, int? formatoId)
         {
-            var query = from m in Context.Medios
+            var query = from m in Context.Medios.Include("Formato").Include("Area")
                 select m;
 
             if (!string.IsNullOrEmpty(criterio))
@@ -21,11 +22,33 @@ namespace Sono_Viso.Repository
                     where m.Titulo.ToUpper().Contains(criterio.ToUpper())
                     select m;
             }
+            if (areaId.HasValue && areaId != 0)
+            {
+                query = query.Where(m => m.AreaId.Equals(areaId.Value)).Where(m => m.FormatoId.Equals(formatoId.Value));
+            }
+
             return query;
         }
-        public Medio GetMedio(int id)
+
+        public IEnumerable<Medio> GetMedios(string criterio)
         {
-            return Context.Medios.Find(id);
+            var query = from m in Context.Medios.Include("Formato").Include("Area")
+                        select m;
+
+            if (!string.IsNullOrEmpty(criterio))
+            {
+                query = from m in query
+                        where m.Titulo.ToUpper().Contains(criterio.ToUpper())
+                        select m;
+            }
+
+            return query;
+        }
+
+        public Medio GetMedio(string id)
+        {
+            var medio = Context.Medios.Find(id);
+            return medio;
         }
         public Medio AddMedio(Medio medio)
         {
@@ -34,7 +57,7 @@ namespace Sono_Viso.Repository
             return medio;
         }
 
-        public void DeleteMedio(int id)
+        public void DeleteMedio(string id)
         {
             var existe = Context.Medios.Find(id);
             if (existe != null)
@@ -44,9 +67,10 @@ namespace Sono_Viso.Repository
             }
         }
 
-        public Medio EditMedio(Medio medio)
+        public void EditMedio(Medio medio)
         {
-            throw new NotImplementedException();
+            Context.Entry(medio).State = EntityState.Modified;
+            Context.SaveChanges();
         }
 
     }

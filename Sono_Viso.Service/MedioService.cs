@@ -20,11 +20,17 @@ namespace Sono_Viso.Service
             }
         }
 
+        public IEnumerable<Medio> GetMedios(string criterio, int? areaId, int? formatoId)
+        {
+            return MedioRepository.GetMedios(criterio,areaId,formatoId);
+        }
+
         public IEnumerable<Medio> GetMedios(string criterio)
         {
             return MedioRepository.GetMedios(criterio);
         }
-        public Medio GetMedio(int id)
+
+        public Medio GetMedio(string id)
         {
             return MedioRepository.GetMedio(id);
         }
@@ -33,14 +39,14 @@ namespace Sono_Viso.Service
             return MedioRepository.AddMedio(medio);
         }
 
-        public void DeleteMedio(int id)
+        public void DeleteMedio(string id)
         {
             MedioRepository.DeleteMedio(id);
         }
 
-        public Medio EditMedio(Medio medio)
+        public void EditMedio(Medio medio)
         {
-            return MedioRepository.EditMedio(medio);
+            MedioRepository.EditMedio(medio);
         }
 
     }
