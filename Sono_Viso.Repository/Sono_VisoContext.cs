@@ -17,6 +17,8 @@ namespace Sono_Viso.Repository
         public DbSet<Genero> Generos { get; set; }
         public DbSet<Produccion> Produccions { get; set; }
         public DbSet<Medio> Medios { get; set; }
+        public DbSet<CategoriaMaterial> CategoriaMaterials { get; set; }
+        public DbSet<Material> Materials { get; set; }  
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -29,6 +31,8 @@ namespace Sono_Viso.Repository
             modelBuilder.Configurations.Add(new GeneroMap());
             modelBuilder.Configurations.Add(new ProduccionMap());
             modelBuilder.Configurations.Add(new MedioMap());
+            modelBuilder.Configurations.Add(new CategoriaMaterialMap());
+            modelBuilder.Configurations.Add(new MaterialMap());
         }
     }
 }

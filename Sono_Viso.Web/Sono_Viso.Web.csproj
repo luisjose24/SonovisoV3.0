@@ -232,6 +232,7 @@
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Otros\FormAreas.aspx" />
+    <Content Include="Otros\FormCategoriaMaterial.aspx" />
     <Content Include="Otros\FormFormato.aspx" />
     <Content Include="Otros\FormGenero.aspx" />
     <Content Include="Otros\FrmMedios.aspx" />
@@ -426,6 +427,13 @@
     </Compile>
     <Compile Include="Otros\FormAreas.aspx.designer.cs">
       <DependentUpon>FormAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Otros\FormCategoriaMaterial.aspx.cs">
+      <DependentUpon>FormCategoriaMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Otros\FormCategoriaMaterial.aspx.designer.cs">
+      <DependentUpon>FormCategoriaMaterial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Otros\FormFormato.aspx.cs">
       <DependentUpon>FormFormato.aspx</DependentUpon>
