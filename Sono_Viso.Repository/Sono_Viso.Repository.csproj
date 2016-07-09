@@ -67,10 +67,12 @@
   <ItemGroup>
     <Compile Include="AreaRepository.cs" />
     <Compile Include="CategoriaMaterialRepository.cs" />
+    <Compile Include="ClienteRepository.cs" />
     <Compile Include="FormatoRepository.cs" />
     <Compile Include="GeneroRepository.cs" />
     <Compile Include="IAreaRepository.cs" />
     <Compile Include="ICategoriaMaterialRepository.cs" />
+    <Compile Include="IClienteRepository.cs" />
     <Compile Include="IFormatoRepository.cs" />
     <Compile Include="IGeneroRepository.cs" />
     <Compile Include="IMaterialRepository.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="IProduccionRepository.cs" />
     <Compile Include="Mapping\AreaMap.cs" />
     <Compile Include="Mapping\CategoriaMaterialMap.cs" />
+    <Compile Include="Mapping\ClienteMap.cs" />
     <Compile Include="Mapping\FormatoMap.cs" />
     <Compile Include="Mapping\GeneroMap.cs" />
     <Compile Include="Mapping\MaterialMap.cs" />
@@ -93,6 +96,22 @@
     <Compile Include="Migrations\201607090600013_Material.cs" />
     <Compile Include="Migrations\201607090600013_Material.Designer.cs">
       <DependentUpon>201607090600013_Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607090842305_Cliente_3.cs" />
+    <Compile Include="Migrations\201607090842305_Cliente_3.Designer.cs">
+      <DependentUpon>201607090842305_Cliente_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607090950010_Cliente_4.cs" />
+    <Compile Include="Migrations\201607090950010_Cliente_4.Designer.cs">
+      <DependentUpon>201607090950010_Cliente_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607091116304_Cliente_5.cs" />
+    <Compile Include="Migrations\201607091116304_Cliente_5.Designer.cs">
+      <DependentUpon>201607091116304_Cliente_5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607091126163_Cliente_6.cs" />
+    <Compile Include="Migrations\201607091126163_Cliente_6.Designer.cs">
+      <DependentUpon>201607091126163_Cliente_6.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProduccionRepository.cs" />
@@ -115,6 +134,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607090600013_Material.resx">
       <DependentUpon>201607090600013_Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607090842305_Cliente_3.resx">
+      <DependentUpon>201607090842305_Cliente_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607090950010_Cliente_4.resx">
+      <DependentUpon>201607090950010_Cliente_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607091116304_Cliente_5.resx">
+      <DependentUpon>201607091116304_Cliente_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607091126163_Cliente_6.resx">
+      <DependentUpon>201607091126163_Cliente_6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

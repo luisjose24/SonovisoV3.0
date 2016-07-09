@@ -3,8 +3,8 @@
     
     
     <div class="form-group col-sm-4">
-        <h1>PARTE 1</h1>
-        <asp:Button Text="Activar Panel 2" runat="server" OnClick="Unnamed1_Click" />
+        <h1>Registrar Medio</h1>
+        
         
         <asp:Panel ID="panel1" runat="server">
             <asp:FormView ID="fvMedios" DefaultMode="Insert" runat="server"
@@ -311,7 +311,7 @@
 
     </div>
     <div class="form-group col-sm-7">
-        <h1>PARTE 2</h1>
+        <h1>Administrar Medio</h1>
         
         <label class="control-label">Criterio:</label>
                     <div class="form-group">

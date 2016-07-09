@@ -1,90 +1,71 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmMaterials.aspx.cs" Inherits="Sono_Viso.Web.Otros.FrmMaterials" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmCliente.aspx.cs" Inherits="Sono_Viso.Web.Otros.FrmCliente" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
-    
-    
-    <div class="form-group col-sm-4">
-        <h1>Registrar Material</h1>
+        <div class="form-group col-sm-4">
+        <h1>Registrar Cliente</h1>
         
         
         <asp:Panel ID="panel1" runat="server">
-            <asp:FormView ID="fvMaterials" DefaultMode="Insert" runat="server"
-                ItemType="Sono_Viso.BusinessEntities.Material"
-                SelectMethod="GetMaterial"
-                InsertMethod="AddMaterial"
-                UpdateMethod="EditMaterial">
+            <asp:FormView ID="fvCliente" DefaultMode="Insert" runat="server"
+                ItemType="Sono_Viso.BusinessEntities.Cliente"
+                SelectMethod="GetCliente"
+                InsertMethod="AddCliente"
+                UpdateMethod="EditCliente">
                 <ItemTemplate></ItemTemplate>
 
                 <InsertItemTemplate>
                     
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Categoria: </label>
+                            <label>Apellidos: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:DropDownList ID="DropDownList1" runat="server"
-                                CssClass="form-control input-sm"
-                                ItemType="Sono_Viso.BusinessEntities.CategoriaMaterial"
-                                SelectMethod="GetCategoriaMaterial"
-                                DataTextField="Nombre"
-                                DataValueField="Id"
-                                SelectedValue="<%# BindItem.CategoriaMaterialId %>"
-                                >
-                                </asp:DropDownList> 
+                            <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control" Text="<%# BindItem.Apellidos %>" />
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Modelo: </label>
+                            <label>Nombres: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtModelo" runat="server" CssClass="form-control" Text="<%# BindItem.Modelo %>" />
+                            <asp:TextBox ID="txtNombres" runat="server" CssClass="form-control" Text="<%# BindItem.Nombres %>" />
                         </div>
                     </div>
                                 
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Marca: </label>
+                            <label>DNI: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtMarca" runat="server" CssClass="form-control" Text="<%# BindItem.Marca %>" />
+                            <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" Text="<%# BindItem.DNI %>" />
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Serie: </label>
+                            <label>E-mail: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtSerie" runat="server" CssClass="form-control" Text="<%# BindItem.NumSerie %>" />
+                            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Text="<%# BindItem.EmailCliente %>" />
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Año: </label>
+                            <label>Direccion: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtAnio" runat="server" CssClass="form-control" Text="<%# BindItem.Anio %>" />
+                            <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control" Text="<%# BindItem.Direccion %>" />
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Ingreso: </label>
+                            <label>Telefono: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtIngreso" runat="server" CssClass="form-control" Text="<%# BindItem.FechaIngreso %>" />
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="form-inline col-sm-3">
-                            <label>V. Util: </label>
-                        </div>
-                        <div class="col-sm-9">
-                            <asp:TextBox ID="txtVidaUtil" runat="server" CssClass="form-control" Text="<%# BindItem.VidaUtil %>" />
+                            <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" Text="<%# BindItem.TelefCliente %>" />
                         </div>
                     </div>
                     
@@ -93,7 +74,7 @@
                             <label>Estado: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:CheckBox ID="chkEstado" Text="Disponible" Checked="<%# BindItem.Estado %>" runat="server" />
+                            <asp:CheckBox ID="chkEstado" Text="Habilitado" Checked="<%# BindItem.Estado %>" runat="server" />
                         </div>
                     </div>
                     
@@ -118,81 +99,65 @@
                 <EditItemTemplate>
                     
                     <div class="form-group">
-                        <div class="form-inline col-sm-3" style="display: none" >
-                            <label>Id: </label>
+                        <div class="form-inline col-sm-3" style="display: none">
+                            <label>ID: </label>
                         </div>
                         <div class="col-sm-9" style="display: none">
-                            <asp:TextBox ID="txtId" runat="server" CssClass="form-control" Text="<%# BindItem.Id %>" />
+                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text="<%# BindItem.IdCliente %>" />
                         </div>
                     </div>
+
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Categoria: </label>
+                            <label>Apellidos: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:DropDownList ID="DropDownList1" runat="server"
-                                CssClass="form-control input-sm"
-                                ItemType="Sono_Viso.BusinessEntities.CategoriaMaterial"
-                                SelectMethod="GetCategoriaMaterial"
-                                DataTextField="Nombre"
-                                DataValueField="Id"
-                                SelectedValue="<%# BindItem.CategoriaMaterialId %>"
-                                >
-                                </asp:DropDownList> 
+                            <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control" Text="<%# BindItem.Apellidos %>" />
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Modelo: </label>
+                            <label>Nombres: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtModelo" runat="server" CssClass="form-control" Text="<%# BindItem.Modelo %>" />
+                            <asp:TextBox ID="txtNombres" runat="server" CssClass="form-control" Text="<%# BindItem.Nombres %>" />
                         </div>
                     </div>
                                 
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Marca: </label>
+                            <label>DNI: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtMarca" runat="server" CssClass="form-control" Text="<%# BindItem.Marca %>" />
+                            <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" Text="<%# BindItem.DNI %>" />
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Serie: </label>
+                            <label>E-mail: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtSerie" runat="server" CssClass="form-control" Text="<%# BindItem.NumSerie %>" />
+                            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Text="<%# BindItem.EmailCliente %>" />
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Año: </label>
+                            <label>Direccion: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtAnio" runat="server" CssClass="form-control" Text="<%# BindItem.Anio %>" />
+                            <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control" Text="<%# BindItem.Direccion %>" />
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <div class="form-inline col-sm-3">
-                            <label>Ingreso: </label>
+                            <label>Telefono: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="txtIngreso" runat="server" CssClass="form-control" Text="<%# BindItem.FechaIngreso %>" />
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="form-inline col-sm-3">
-                            <label>V. Util: </label>
-                        </div>
-                        <div class="col-sm-9">
-                            <asp:TextBox ID="txtVidaUtil" runat="server" CssClass="form-control" Text="<%# BindItem.VidaUtil %>" />
+                            <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" Text="<%# BindItem.TelefCliente %>" />
                         </div>
                     </div>
                     
@@ -201,7 +166,7 @@
                             <label>Estado: </label>
                         </div>
                         <div class="col-sm-9">
-                            <asp:CheckBox ID="chkEstado" Text="Disponible" Checked="<%# BindItem.Estado %>" runat="server" />
+                            <asp:CheckBox ID="chkEstado" Text="Habilitado" Checked="<%# BindItem.Estado %>" runat="server" />
                         </div>
                     </div>
                     
@@ -231,13 +196,13 @@
 
     </div>
     <div class="form-group col-sm-7">
-        <h1>Administrar Material</h1>
+        <h1>Administrar Cliente</h1>
         
         <label class="control-label">Criterio:</label>
                     <div class="form-group">
                         <asp:TextBox ID="txtCriterio" CssClass="form-control input-sm col-sm-5" runat="server"/>
                         <asp:Button Text="Buscar" ID="Button1" CssClass="btn btn-success col-sm-offset-0" runat="server" />
-                        <a href = "/Otros/FrmMaterials.aspx?acc=nuevo" class="btn btn-success col-sm-offset-1">
+                        <a href = "/Otros/FrmCliente.aspx?acc=nuevo" class="btn btn-success col-sm-offset-1">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Registrar
                         </a>
                     </div>
@@ -246,16 +211,16 @@
         
         <asp:Panel ID="panel2" runat="server">
             
-            <asp:ListView ID="lvMaterials" runat="server" 
-                        ItemType="Sono_Viso.BusinessEntities.Material"
-                        SelectMethod="GetMaterials">
+            <asp:ListView ID="lvClientes" runat="server" 
+                        ItemType="Sono_Viso.BusinessEntities.Cliente"
+                        SelectMethod="GetClientes">
                         <LayoutTemplate>
                             <table class="table table-hover table-striped table-condensed">
                                 <thead>
                                 <tr>
-                                    <th>Categoria</th>
-                                    <th>Marca</th>
-                                    <th>Modelo</th> 
+                                    <th>DNI</th>
+                                    <th>Apellidos y Nombres</th>
+                                    <th>E-mail</th> 
                                     <th>Estado</th> 
                                     <th>Acciones</th> 
                                 </tr>
@@ -270,14 +235,14 @@
                         
                         <ItemTemplate>
                             <tr>
-                                <td><%# Item.CategoriaMaterial.Nombre %></td>
-                                <td><%# Item.Marca %></td>
-                                <td><%# Item.Modelo %></td>
+                                <td><%# Item.DNI %></td>
+                                <td><%# Item.Apellidos +", "+Item.Nombres %></td>
+                                <td><%# Item.EmailCliente %></td>
                                 <td><%# Item.Estado.Equals(1)?"No Disponible":"Disponible" %></td>
                                 <%--<td><%# Item.Tipo=="J"?"Juridico":"Natural" %></td>--%>
-                                <td><a href="/Otros/FrmMaterials.aspx?acc=editar&id=<%# Item.Id %>">Editar</a><a>  |  </a>
-                                    <a href="FrmMaterials.aspx?acc=eliminar&id=<%# Item.Id %>"
-                                        onclick="return confirm('Desea eliminar: <%# Item.CategoriaMaterial.Nombre + " "+Item.Marca +" "+Item.Modelo %>');">Eliminar</a>
+                                <td><a href="/Otros/FrmCliente.aspx?acc=editar&id=<%# Item.IdCliente %>">Editar</a><a>  |  </a>
+                                    <a href="FrmCliente.aspx?acc=eliminar&id=<%# Item.IdCliente %>"
+                                        onclick="return confirm('Desea eliminar a: <%# Item.Apellidos +", "+Item.Nombres %>');">Eliminar</a>
                                 </td>
 
                             </tr>
@@ -293,5 +258,6 @@
     </div>
  
     <div><br/></div>
+    
 
 </asp:Content>

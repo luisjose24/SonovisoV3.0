@@ -235,6 +235,7 @@
     <Content Include="Otros\FormCategoriaMaterial.aspx" />
     <Content Include="Otros\FormFormato.aspx" />
     <Content Include="Otros\FormGenero.aspx" />
+    <Content Include="Otros\FrmCliente.aspx" />
     <Content Include="Otros\FrmMaterials.aspx" />
     <Content Include="Otros\FrmMedios.aspx" />
     <Content Include="Otros\FrmProduccion.aspx" />
@@ -449,6 +450,13 @@
     </Compile>
     <Compile Include="Otros\FormGenero.aspx.designer.cs">
       <DependentUpon>FormGenero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Otros\FrmCliente.aspx.cs">
+      <DependentUpon>FrmCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Otros\FrmCliente.aspx.designer.cs">
+      <DependentUpon>FrmCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Otros\FrmMaterials.aspx.cs">
       <DependentUpon>FrmMaterials.aspx</DependentUpon>
