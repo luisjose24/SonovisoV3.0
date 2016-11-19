@@ -12,6 +12,7 @@
                 SelectMethod="GetAreas"
                 DataTextField="Nombre"
                 DataValueField="Id" AutoPostBack="True"
+                              
                 >
         
     </asp:DropDownList>     
